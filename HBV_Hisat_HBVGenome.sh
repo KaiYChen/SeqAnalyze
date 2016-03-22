@@ -1,13 +1,13 @@
 #!/bin/bash
-#sample=(5928_5504_26679_C7UWVANXX_HP2con_ATCACG_R1 5928_5504_26680_C7UWVANXX_HP215con_CGATGT_R1 5928_5504_26681_C7UWVANXX_HP2sh3_TTAGGC_R1 5928_5504_26682_C7UWVANXX_HP215sh3_TGACCA_R1 5928_5504_26683_C7UWVANXX_HP215Flagsp3old_ACAGTG_R1 5928_5504_26684_C7UWVANXX_HP215Flagsp3new_GCCAAT_R1)
-sample=(5928_5504_26680_C7UWVANXX_HP215con_CGATGT_R1 5928_5504_26681_C7UWVANXX_HP2sh3_TTAGGC_R1 5928_5504_26682_C7UWVANXX_HP215sh3_TGACCA_R1 5928_5504_26683_C7UWVANXX_HP215Flagsp3old_ACAGTG_R1 5928_5504_26684_C7UWVANXX_HP215Flagsp3new_GCCAAT_R1)
+sample=(10346359_AC_HP215Sh3 10346359_CT_HP2Cont 10346359_GA_HP215Sp3 10346359_TG_HP215Cont)
 
 gtf=/home/kc287/reference_geome/genome_hbv/refseq_annotation_HBV.gtf
 genome_idx=/home/kc287/reference_geome/genome_hbv/HBV
+
 for i in ${sample[@]}
 do
 	## hisat2
-	hisat2 -p 8 -x $genome_idx -U ${i}.fastq.gz -S ./${i}.sam &> ./${i}.sam.info
+	hisat2 -p 8 -x $genome_idx -U ${i}.fastq -S ./${i}.sam &> ./${i}.sam.info
 	## sam to bam
 	samtools view -Su ./${i}.sam | samtools sort - ${i}.sorted
 	## 3. Making samtool index
