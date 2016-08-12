@@ -1,10 +1,11 @@
-ATAC-Seq pipeline
-1. QC
+#!/bin/bash
+#ATAC-Seq pipeline
+#1. QC
   fastqc filename.fastq
   #it's important to check the quality of fastq file, especially if there are remaining adaptor fragment 
-2. trim adaptor
+#2. trim adaptor
   trim_galore filename.fastq
   #trim the fastq file to avoid the ramaining adaptor fragment
-3. Bowtie Alignment
+#3. Bowtie Alignment
   bowtie2 -p 8 --very-sensitive --maxins 2000 --no-discordant -x $genome_idx -U ${i}.fastq -S ./${i}.sam &> ./${i}.sam.info
-4. 
+#4. 
