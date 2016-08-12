@@ -1,0 +1,6 @@
+ATAC-Seq pipeline
+1. QC
+  fastqc filename
+2. trim adaptor
+  trim_galore
+3. Bowtie Alignment
