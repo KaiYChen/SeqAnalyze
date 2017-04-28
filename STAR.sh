@@ -24,7 +24,7 @@ make STARforMacStatic
 genomeDir=~/temp_data/reference_genome/star_hg19_genome/
 runDir=~/Desktop/STAR/1pass
 gtfFile=~/temp_data/reference_genome/Homo_sapiens_UCSC_hg19/genes.gtf
-fastqfile=/Volumes/ShenLabData/Data/HighThroughput/Project_Epigenomic/atacSeq_HumanOrganoid/Chen_3950_170311B1/fastq/KC1_S24_L005_R1_001.fastq.gz
+fastqfile=./KC1_S24_L005_R1_001.fastq.gz
 mkdir $runDir
 cd $runDir
 /opt/STAR-2.5.2b/bin/MacOSX_x86_64/STAR --genomeDir $genomeDir --readFilesIn $fastqfile \
