@@ -1,5 +1,6 @@
 # Version info: R 3.2.3, Biobase 2.30.0, GEOquery 2.40.0, limma 3.26.8
 # R scripts generated  Mon Feb 6 14:44:30 EST 2017
+# adopted from GEO2R
 
 ################################################################
 #   Differential expression analysis with limma
